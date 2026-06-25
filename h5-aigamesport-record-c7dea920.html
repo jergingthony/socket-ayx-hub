@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f0;
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+            color: #2f2e2b;
+            line-height: 1.75;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 100%;
+        }
+
+        /* 开场短句 – 像引子 */
+        .opening-line {
+            font-size: 1.9rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #3f3c35;
+            border-left: 4px solid #b8a99a;
+            padding-left: 1.4rem;
+            margin-top: 0.8rem;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+            font-style: normal;
+        }
+
+        .opening-line small {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 1rem;
+            color: #7d756a;
+            letter-spacing: 0.3px;
+            font-weight: 300;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            padding-right: 0.5rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text a {
+            color: #8b6f50;
+            text-decoration: none;
+            border-bottom: 1px dashed #b8a387;
+            transition: border-color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom: 1px solid #5e4c38;
+            color: #5e4c38;
+        }
+
+        /* 引用块 / 提示框 */
+        .advisory-box {
+            background-color: #efebe4;
+            border-left: 6px solid #bfaf9c;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.98rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .advisory-box .box-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #7a6b5b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid #d5cbbc;
+            padding-bottom: 0.2rem;
+        }
+
+        /* 特点列表 – 温和，不是夸张卡片 */
+        .feature-list {
+            margin: 2.8rem 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding: 0.6rem 0 0.6rem 2rem;
+            border-bottom: 1px solid #e5ddd2;
+            font-size: 1rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.4rem;
+            top: 0.6rem;
+            font-size: 1.8rem;
+            color: #b8a387;
+            line-height: 1;
+        }
+
+        /* 场景小段落 (温和叙述) */
+        .scene-note {
+            margin: 2.5rem 0 1.8rem;
+            padding: 1.2rem 1.6rem;
+            background: #f3f0e9;
+            border-radius: 20px 4px 20px 4px;
+            font-style: italic;
+            color: #4d463e;
+            border: 1px solid #e0d7ca;
+        }
+
+        .scene-note strong {
+            font-style: normal;
+            font-weight: 500;
+            color: #5e4c38;
+        }
+
+        /* 结尾 */
+        .closing {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dad0c2;
+            font-size: 0.98rem;
+            color: #5e5549;
+        }
+
+        .closing a {
+            color: #6b5a46;
+            border-bottom: 1px dotted #b8a387;
+            text-decoration: none;
+        }
+
+        .closing a:hover {
+            color: #3e352a;
+            border-bottom: 1px solid #6b5a46;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .opening-line {
+                font-size: 1.5rem;
+                padding-left: 1rem;
+                border-left-width: 3px;
+            }
+
+            .advisory-box {
+                padding: 1rem 1.2rem;
+            }
+
+            .feature-list li {
+                padding-left: 1.6rem;
+                font-size: 0.96rem;
+            }
+
+            .scene-note {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="opening-line">
+        从一条链接开始，认识一个更清晰的体育方式。
+        <small>—— 不是每扇门都需要用力推开。</small>
+    </div>
+
+    <!-- 承接段落：简明指南式的叙述 -->
+    <div class="intro-text">
+        <p>
+            有时候，一个选择的好坏并不取决于它有多么耀眼，而在于它是否贴合你习惯的节奏。对于许多喜欢在碎片时间里感受运动节奏的朋友来说，找到一处体验流畅、界面轻便的线上空间，往往比盲目追逐功能堆叠更重要。<a href="https://h5-aigamesport.com">爱游戏体育</a>便是这样一个地方——它没有复杂的门槛，也不刻意渲染声势，更像一位熟悉球路的老朋友，安静地站在你常用的浏览器里。
+        </p>
+        <p>
+            无论你是刚刚开始尝试移动端体育浏览，还是已经熟悉各类平台，下面几点简要特征或许能帮你判断它是否与你合拍。
+        </p>
+    </div>
+
+    <!-- 特点列表（温和克制的叙述） -->
+    <ul class="feature-list">
+        <li><strong>轻启动，不占空间</strong> —— 基于 H5 页面，无需下载安装包，不侵占手机存储。适合那些只想快速看一眼赛况或轮换的日常。</li>
+        <li><strong>界面偏素简</strong> —— 没有过度设计的弹窗或闪烁横幅，信息层级相对清楚。你可以把注意力放在内容上，而不是被按钮牵着走。</li>
+        <li><strong>适配多数移动浏览器</strong> —— 无论是 iOS Safari 还是 Chrome 系，横竖屏切换时布局基本稳定，不会出现按钮错位或文本溢出。</li>
+        <li><strong>内容更新节奏稳定</strong> —— 赛事列表、数据面板以及相关资讯的同步频率不算激进，但常用板块基本保持及时刷新，够用且不吵闹。</li>
+    </ul>
+
+    <!-- 提示框 / 引用块 (访问提醒) -->
+    <div class="advisory-box">
+        <div class="box-label">⏺ 使用提醒</div>
+        建议在网络环境稳定的情况下打开页面。部分公共 Wi-Fi 可能对 H5 内容有限制，若遇到加载迟滞，可尝试切换至移动数据或刷新一次。另外，初次访问时可花几秒熟悉页面布局——所有主要功能入口都在首页可见范围内，无需反复返回。
+    </div>
+
+    <!-- 场景小段落（叙述感） -->
+    <div class="scene-note">
+        <strong>一个常见场景：</strong> 午休时打开手机浏览器，输入或点击书签中的链接，页面在几秒内呈现。你可以先扫一眼当日焦点，然后退出，整个过程就像打开一篇图文消息那样自然。没有冗余的推送请求，也没有强制注册的弹窗。
+    </div>
+
+    <!-- 温和结尾 + 包含带链接的句子 -->
+    <div class="closing">
+        <p>
+            如果你正在寻找一个不打扰、不乱跳、能安静浏览体育内容的地方，或许可以花一分钟看看<a href="https://h5-aigamesport.com">爱游戏体育</a>。说到底，好的工具不该让你花时间去适应它，而是反过来，轻轻接住你的习惯。
+        </p>
+        <p style="margin-top: 1.2rem; color: #7d756a;">
+            希望这个页面能成为你了解它的一小段序曲。
+        </p>
+    </div>
+
+    <!-- 微小脚注 – 无功能仅装饰 -->
+    <div style="margin-top: 3.5rem; text-align: right; font-size: 0.75rem; color: #c1b6a8; border-top: 1px solid #ede7dd; padding-top: 1rem;">
+        · 一篇简明指南
+    </div>
+</div>
+</body>
+</html>
