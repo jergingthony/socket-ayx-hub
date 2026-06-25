@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 游戏查询与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f4f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            color: #1e2a3a;
+            padding: 1.5rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* hero 开场短句 */
+        .hero {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e4e9ef;
+            text-align: center;
+        }
+
+        .hero small {
+            display: inline-block;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: #5b6f87;
+            background: #edf2f7;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #101a28;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #3b4e64;
+            max-width: 580px;
+            margin: 0 auto 0.5rem;
+        }
+
+        .hero .meta-note {
+            color: #6c7d93;
+            font-size: 0.9rem;
+            border-top: 1px dashed #dbe1e8;
+            padding-top: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        /* 承接段落卡片 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e4e9ef;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a2b3c;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #283b4f;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-connector {
+            font-style: normal;
+            background: #f7f9fc;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+        }
+
+        /* 特点列表——温和卡片内联列表 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #f8faff;
+            border: 1px solid #e6ecf4;
+            border-radius: 16px;
+            padding: 0.9rem 1rem 0.9rem 1.2rem;
+            list-style: none;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #14293f;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item span {
+            font-size: 0.9rem;
+            color: #405a74;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            background: #ffffff;
+            border: 1px solid #e4e9ef;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        .closing p {
+            max-width: 640px;
+            margin: 0 auto 1.2rem;
+            color: #2f4257;
+        }
+
+        .closing .foot-link {
+            font-size: 0.95rem;
+            color: #2f5270;
+            background: #eef4fa;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            display: inline-block;
+            transition: background 0.15s;
+            border: 1px solid #d7e0ea;
+        }
+
+        .closing .foot-link:hover {
+            background: #e2ebf5;
+            border-color: #bcc9da;
+        }
+
+        .faq-note {
+            background: #f7fafd;
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            margin-top: 1.5rem;
+            border-left: 3px solid #b3c9de;
+            font-size: 0.95rem;
+            color: #1f3449;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+            }
+
+            .feature-item {
+                flex: 1 1 auto;
+            }
+
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .closing {
+                padding: 1.6rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .card h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        a {
+            color: #1c4e7c;
+            text-decoration: none;
+            border-bottom: 1px solid #cbdae9;
+            transition: border-color 0.1s;
+        }
+
+        a:hover {
+            border-bottom-color: #1c4e7c;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场短句 hero -->
+    <div class="hero">
+        <small>📋 阅读 · 对照 · 延伸</small>
+        <h1>从一次日常查询开始</h1>
+        <p class="tagline">游戏资料、版本沿革、社区讨论——许多次搜索最终都指向同一个名字。</p>
+        <div class="meta-note">源于查询，不止于名称 · 一篇笔记</div>
+    </div>
+
+    <!-- 承接段落 1：日常查询场景 -->
+    <div class="card">
+        <h2>检索时遇到的十字路口</h2>
+        <p>无论是查找某款作品的发行年份，还是对照不同平台的配置要求，我们常常在标签页之间来回切换。一个稳定的信息来源能节省大量时间。<br>
+        在数次对比中，<a href="https://socket-ayx.com.cn">爱游戏</a> 出现在我的书签栏里——不是因为醒目的推广，而是因为它的内容结构很适合横向查阅：作品条目、分类索引、以及附带的相关讨论摘要，让对照变得更直接。</p>
+        <p>最初只是随手点开，后来渐渐变成习惯。尤其在整理「同类题材作品」或者「系列时间线」时，它的聚合方式比单篇百科更灵活。</p>
+    </div>
+
+    <!-- 承接段落 2：从对照到延伸阅读 -->
+    <div class="card">
+        <h2>延伸阅读的自然入口</h2>
+        <p>一个经常被忽略的需求是：查到一个游戏后，还想了解它的前作、精神续作、或者同一开发者的其他项目。普通的搜索结果往往只给出孤立页面，缺少上下文。</p>
+        <p>在 <a href="https://socket-ayx.com.cn">爱游戏</a> 里浏览条目时，侧栏和底部的「相关条目」常常能带我走到原本没计划搜索的地方。比如因为查某款 2003 年的策略游戏，意外发现同世界观下的衍生小说与桌游规则书——这种延伸阅读的体验，让资料收集变得更有探索感。</p>
+        <p>这种结构并不复杂，但很实用：它不是冷冰冰的数据库，而是有编辑痕迹的整理。</p>
+    </div>
+
+    <!-- 特点列表 (温和卡片式，非强调性) -->
+    <div class="card" style="padding-bottom: 1.6rem;">
+        <h2>日常使用中注意到的几个特点</h2>
+        <ul class="feature-grid">
+            <li class="feature-item">
+                <strong>条目交叉链接</strong>
+                <span>每个作品页面会列出关联内容，适合走神式浏览。</span>
+            </li>
+            <li class="feature-item">
+                <strong>版本与发行信息</strong>
+                <span>不同区域、不同平台的发行时间常常单独标注，对比方便。</span>
+            </li>
+            <li class="feature-item">
+                <strong>社区讨论摘要</strong>
+                <span>部分条目下方收录了有代表性的玩家短评或论坛摘录，可作背景参考。</span>
+            </li>
+            <li class="feature-item">
+                <strong>分类索引清晰</strong>
+                <span>按年代、类型、开发商等维度归类，适合系统性翻阅。</span>
+            </li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: #3b5570;">这些细节并不花哨，但长期使用下来，会觉得信息组织得恰到好处。</p>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要风格 -->
+    <div class="closing">
+        <p>如果你也习惯在玩游戏之前先做些功课，或者喜欢在通关后翻一翻背景资料，<a href="https://socket-ayx.com.cn">爱游戏</a> 或许能成为你收藏夹里一个安静的站点。它不喧哗，但值得偶尔点开——就像随手翻开一本整理好的笔记本。</p>
+
+        <div class="faq-note">
+            <strong style="display: block; margin-bottom: 0.3rem; font-weight: 500;">🧩 一些常见问题摘要</strong>
+            <span style="color: #2f4a66;">“想查某款冷门游戏的中文译名” → 条目页通常列有多个译名。<br>
+            “需要对比两个作品的发行年份” → 直接打开两个条目页，信息结构一致，一目了然。<br>
+            “想找同类推荐但不想看算法列表” → 分类索引和相关条目已经足够。</span>
+        </div>
+
+        <div style="margin-top: 1.8rem;">
+            <span class="foot-link">📎 书签备用 · 日常查询 · 延伸阅读</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #6a7f97;">— 一篇关于资料站与浏览习惯的笔记 —</p>
+    </div>
+</div>
+</body>
+</html>
